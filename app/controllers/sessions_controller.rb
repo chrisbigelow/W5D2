@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
     if @user
       login(@user)
-      #redirect_to somewhere
+      redirect_to subs_url
     else
       flash[:errors] = ["login error"]
       render :new
@@ -16,6 +16,6 @@ class SessionsController < ApplicationController
 
   def destroy
     logout
-    #redirect_to somewhere
+    redirect_to new_session_url
   end
 end

@@ -1,0 +1,13 @@
+<h1>Sub</h1>
+
+
+<%= @sub.title %>
+<%= @sub.description %>
+
+<label>Moderator:
+<%= @sub.moderator.username %>
+
+<% if current_user == @sub.moderator %>
+  <%= link_to "Edit Sub", edit_sub_url(@sub) %>
+<% end %>
+</label>

@@ -9,11 +9,14 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       login(@user)
-      #redirect_to somewhere
+      redirect_to subs_url
     else
       flash[:errors] = ["login error"]
       render :new
     end
+  end
+
+  def index
   end
 
 
